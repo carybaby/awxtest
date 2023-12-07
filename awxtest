@@ -1,0 +1,14 @@
+---
+- name: Install Nginx
+  hosts: 192.168.21.2
+  become: yes
+
+  tasks:
+    - name: Update apt packages
+      apt:
+        update_cache: yes
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
